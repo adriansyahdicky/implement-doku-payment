@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<div class="container">
+
+
+    <form method="post">
+        <div class="form-group">
+            <label for="Currency">Currency</label>
+            <input type="text" class="form-control" id="Currency" name="Currency" placeholder="Enter Your Currency" value="">
+        </div>
+        <div class="form-group">
+            <label for="Amount">Amount</label>
+            <input type="text" class="form-control" id="Amount" name="Amount" placeholder="Enter Your Amount" value="">
+        </div>
+        <div class="form-group">
+            <label for="Basket">Basket</label>
+            <input type="text" class="form-control" id="Basket" name="Basket" placeholder="Enter Your Amount" value="Item 1,10000.00,1,10000.00">
+        </div>
+        <div class="form-group">
+            <label for="Basket">Test Id Merchant</label>
+            <input type="text" class="form-control" id="Invoice" name="Invoice" value="">
+        </div>
+        <div class="form-group">
+            <label for="Basket">Chain Merchant</label>
+            <input type="text" class="form-control" id="ChainMerchant" name="ChainMerchant" value="NA">
+        </div>
+        <button type="submit" class="btn btn-primary">Test Payment</button>
+    </form>
+
+
+</div>
+

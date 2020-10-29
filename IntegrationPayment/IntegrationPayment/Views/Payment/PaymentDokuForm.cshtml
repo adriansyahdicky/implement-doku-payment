@@ -1,0 +1,44 @@
+﻿@model IntegrationPayment.Models.PaymentViewModel;
+
+@{
+    ViewData["Title"] = "PaymentDokuForm";
+}
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+          rel="stylesheet">
+    <link href="https://staging.doku.com/doku-js/assets/css/doku.css" rel="stylesheet">
+
+
+
+    <div doku-div='form-payment'>
+    </div>
+
+
+    @section Scripts {
+
+        <environment include="Development">
+            <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+            <script src="https://staging.doku.com/doku-js/assets/js/doku.js"></script>
+            <script type="text/javascript">
+                    $(function () {
+
+                        var data = new Object();
+                        data.req_merchant_code = '@Model.mallId';
+                        data.req_chain_merchant = '@Model.ChainMerchant';
+                        data.req_payment_channel = '15'; // ‘15’ = credit card
+                        data.req_transaction_id = '@Model.Invoice';
+                        data.req_currency = '@Model.Currency';
+                        data.req_amount = '@Model.Amount';
+                        data.req_words = '@Model.Words';
+                        data.req_form_type = 'full';
+                        getForm(data);
+                    });
+            </script>
+        </environment>
+
+    }
+
+   
+
